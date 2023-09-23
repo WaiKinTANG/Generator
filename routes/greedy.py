@@ -54,7 +54,7 @@ from routes import app
 logger = logging.getLogger(__name__)
 
 
-@app.route('greedymonkey', methods=['POST'])
+@app.route('/greedymonkey', methods=['POST'])
 def greed():
     data = request.get_json()
     w = data.get("w")
