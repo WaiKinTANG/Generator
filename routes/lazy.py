@@ -61,7 +61,8 @@ def getNextProbableWords(classes: List[Dict],
 def laziness():
     data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
-    input_value = data.get("input")
-    result = getNextProbableWords(input_value["classes"], input_value["statements"])
+    c = data.get("classes")
+    s = data.get("classes")
+    result = getNextProbableWords(c, s)
     logging.info("My result :{}".format(result))
     return json.dumps(result)
