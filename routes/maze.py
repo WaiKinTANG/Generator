@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 @app.route('/maze', methods=['POST'])
-def evaluate():
+def mazerun():
     data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
     input_value = data.get("input")
