@@ -17,7 +17,7 @@ def recorder(id,width,nearby):
     global maze
     global pos
     if id != currentmaze:
-        solvedmaze.update(currentmaze)
+        solvedmaze.update({currentmaze})
         currentmaze = id
         maze = [["#"]*(2*width-1)]*(2*width-1)
         for i in range(3):
