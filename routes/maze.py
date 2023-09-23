@@ -12,31 +12,31 @@ logger = logging.getLogger(__name__)
 def mazerun():
     data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
-    input_value = data.get("input")
+    input_value = data.get("nearBy")
     result = {"playerAction":0}
 
-    if input_value["nearBy"][2][1] == 2:
+    if input_value[2][1] == 2:
         result["playerAction"] = 'down'
 
-    elif input_value["nearBy"][0][1] == 2:
+    elif input_value[0][1] == 2:
         result["playerAction"] = 'up'
 
-    elif input_value["nearBy"][1][0] == 2:
+    elif input_value[1][0] == 2:
         result["playerAction"] = 'left'
     
-    elif input_value["nearBy"][1][2] == 2:
+    elif input_value[1][2] == 2:
         result["playerAction"] = 'right'
 
-    elif (input_value["nearBy"][2][1] == 0) and (input_value["nearby"][1][2] == 1):
+    elif (input_value[2][1] == 0) and (input_value[1][2] == 1):
         result["playerAction"] = 'right'
 
-    elif (input_value["nearBy"][1][0] == 0) and (input_value["nearby"][2][1] == 1):
+    elif (input_value[1][0] == 0) and (input_value[2][1] == 1):
         result["playerAction"] = 'down'
 
-    elif (input_value["nearBy"][0][1] == 0) and (input_value["nearby"][1][0] == 1):
+    elif (input_value[0][1] == 0) and (input_value[1][0] == 1):
         result["playerAction"] = 'left'
 
-    elif (input_value["nearBy"][1][2] == 0) and (input_value["nearby"][0][1] == 1):
+    elif (input_value[1][2] == 0) and (input_value[0][1] == 1):
         result["playerAction"] = 'up'
     
     
