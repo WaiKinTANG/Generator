@@ -1,4 +1,4 @@
-def main(w, v, f):
+def greedymonkey(w, v, f):
     val = 0
     picked = []
     rw = w
