@@ -43,4 +43,4 @@ def mazerun():
     
 
     logging.info("My result :{}".format(result))
-    return json.dumps(input_value)
+    return json.dumps(result)
