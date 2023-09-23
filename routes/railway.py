@@ -32,21 +32,28 @@ def railwaybuilder(inp):
     return oup
 
 def count_combinations(arr, k):
+    memo = {}
+
     def count_recursive(index, target):
         if target == 0:
             return 1
         if index < 0 or target < 0:
             return 0
-        return count_recursive(index - 1, target)+ count_recursive(index, target - arr[index])
+        if (index, target) in memo:
+            return memo[(index, target)]
+
+        memo[(index, target)] = count_recursive(index, target - arr[index]) + count_recursive(index - 1, target)
+        return memo[(index, target)]
 
     return count_recursive(len(arr) - 1, k)
+
 
 def preprocess(ls):
     result = []
     for i in ls:
         a = list(map(int, i.split(",")))
         
-        result.append(count_combinations(sorted(a[2:]),a[0]))
+        result.append(count_combinations(a[2:],a[0]))
     return result
 
 @app.route('/railway-builder', methods=['POST'])
