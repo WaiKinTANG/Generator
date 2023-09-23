@@ -31,11 +31,30 @@ def railwaybuilder(inp):
         oup.append(count)
     return oup
 
+def count_combinations(arr, k):
+    dp = [0] * (k + 1)
+    dp[0] = 1
+
+    for i in range(1, k + 1):
+        for num in arr:
+            if i - num >= 0:
+                dp[i] += dp[i - num]
+
+    return dp[k]
+
+def preprocess(ls):
+    result = []
+    for i in ls:
+        a = list(map(int, i.split(",")))
+        
+        result.append(count_combinations(a[2:],a[0]))
+    return result
+
 @app.route('/railway-builder', methods=['POST'])
 def rail():
     data = request.get_json()
     logging.info("Data :{}".format(data))
     logging.info("Type :{}".format(type(data)))
-    result = railwaybuilder(data)
+    result = preprocess(data)
     logging.info("My result :{}".format(result))
     return json.dumps(result)
