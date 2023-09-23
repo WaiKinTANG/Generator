@@ -62,7 +62,7 @@ def laziness():
     data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
     c = data.get("classes")
-    s = data.get("classes")
+    s = data.get("statements")
     logging.info("classsssssss: {}".format(c))
     logging.info("type of this class:  {}".format(type(c)))
     logging.info("statement {}".format(s))
