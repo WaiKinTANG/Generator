@@ -118,6 +118,7 @@ def walker(num, nearby, lastmove):
 
 @app.route('/maze', methods=['POST'])
 def mazerun():
+    global lastmove
     data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
     input_value = data.get("nearby")
@@ -130,7 +131,7 @@ def mazerun():
 
     
     
-    global lastmove
+    
     lastmove = result["playerAction"]
 
     logging.info("My result :{}".format(result))
