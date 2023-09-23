@@ -12,7 +12,8 @@ logger = logging.getLogger(__name__)
 def mazerun():
     data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
-    input_value = data.get("nearBy")
+    input_value = data.get("nearby")
+    logging.info("data sent for evaluation {}".format(input_value))
     result = {"playerAction":0}
 
     if input_value[2][1] == 2:
