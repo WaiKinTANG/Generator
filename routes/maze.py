@@ -43,7 +43,7 @@ def recorder(id,width,nearby):
             for i in range(3):
                     if maze[pos[0]-1+i][pos[1]+1] == "#":
                         maze[pos[0]-1+i][pos[1]+1]= nearby[i][2]
-        maze[pos][pos] = 2
+        maze[pos[0]][pos[1]] = 2
     for i in range(len(maze)):
         logging.info(maze[i])
         
