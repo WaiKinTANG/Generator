@@ -6,18 +6,15 @@ from flask import request
 from routes import app
 
 logger = logging.getLogger(__name__)
-solvedmaze = {}
 currentmaze = -1
 maze= []
 pos = [-1,-1]
 lastmove = 'up'
 def recorder(id,width,nearby):
-    global solvedmaze
     global currentmaze
     global maze
     global pos
     if id != currentmaze:
-        solvedmaze.update({currentmaze})
         currentmaze = id
         maze = [["#"]*(2*width-1)]*(2*width-1)
         for i in range(3):
