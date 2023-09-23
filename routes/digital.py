@@ -22,7 +22,7 @@ def digitalcolony(gen, col): #gen as number, col as string
 
 
 @app.route('/digital-colony', methods=['POST'])
-def laziness():
+def dgtl():
     data = request.get_json()
     result = []
     for i in data:
