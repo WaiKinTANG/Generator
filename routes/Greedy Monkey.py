@@ -39,3 +39,26 @@ def greedymonkey(w, v, f):
         if ls == []:
             cont = False
     return val
+
+
+
+
+#-----------------------------------------------------------------------------
+import json
+import logging
+
+from flask import request
+
+from routes import app
+
+logger = logging.getLogger(__name__)
+
+
+@app.route('/railway-builder', methods=['POST'])
+def evaluate():
+    data = request.get_json()
+    w = data.get("w")
+    v = data.get("v")
+    f = data.get("f")
+    result = greedymonkey(w, v, f)
+    return json.dumps(result)
