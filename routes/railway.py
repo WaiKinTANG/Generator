@@ -36,6 +36,8 @@ def railwaybuilder(inp):
 @app.route('/railway-builder', methods=['POST'])
 def rail():
     data = request.get_json()
+    logging.info("Data :{}".format(data))
+    logging.info("Type :{}".format(type(data)))
     result = railwaybuilder(data)
     logging.info("My result :{}".format(result))
     return json.dumps(result)
