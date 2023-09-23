@@ -14,7 +14,7 @@ def mazerun():
     logging.info("data sent for evaluation {}".format(data))
     input_value = data.get("nearby")
     logging.info("data sent for evaluation {}".format(input_value))
-    result = {"playerAction":0}
+    result = dict()
 
     if input_value[2][1] == 2:
         result["playerAction"] = 'down'
