@@ -6,3 +6,4 @@ import routes.maze
 import routes.lazy
 import routes.greedy
 import routes.digital
+import routes.railway
