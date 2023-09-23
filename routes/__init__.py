@@ -8,3 +8,4 @@ import routes.greedy
 import routes.digital
 import routes.railway
 import routes.chinese
+import routes.calendar
