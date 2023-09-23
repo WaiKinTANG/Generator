@@ -5,3 +5,4 @@ import routes.square
 import routes.maze
 import routes.lazy
 import routes.greedy
+import routes.digital

@@ -55,7 +55,7 @@ logger = logging.getLogger(__name__)
 
 
 @app.route('greedymonkey', methods=['POST'])
-def evaluate():
+def greed():
     data = request.get_json()
     w = data.get("w")
     v = data.get("v")

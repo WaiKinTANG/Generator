@@ -58,7 +58,7 @@ def getNextProbableWords(classes: List[Dict],
     return result
 
 @app.route('/lazy-developer', methods=['POST'])
-def evaluate():
+def laziness():
     data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
     input_value = data.get("input")
