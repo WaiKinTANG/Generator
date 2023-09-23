@@ -79,29 +79,29 @@ def check(nearby,move):
     return True
 
 def walker(num, nearby, lastmove):
-    if (nearby[2][1] == 2) and lastmove != 'up':
+    if (nearby[2][1] == 3) and lastmove != 'up':
         return 'down'
 
-    elif (nearby[0][1] == 2) and lastmove != 'down':
+    elif (nearby[0][1] == 3) and lastmove != 'down':
         return 'up'
 
-    elif (nearby[1][0] == 2) and lastmove != 'right':
+    elif (nearby[1][0] == 3) and lastmove != 'right':
         return 'left'
     
-    elif (nearby[1][2] == 2) and lastmove != 'left':
+    elif (nearby[1][2] == 3) and lastmove != 'left':
         return 'right'
     
     if num <=2:
-        if (nearby[2][1] == 2) and lastmove != 'up':
+        if (nearby[2][1] == 1) and lastmove != 'up':
             return 'down'
 
-        elif (nearby[0][1] == 2) and lastmove != 'down':
+        elif (nearby[0][1] == 1) and lastmove != 'down':
             return 'up'
 
-        elif (nearby[1][0] == 2) and lastmove != 'right':
+        elif (nearby[1][0] == 1) and lastmove != 'right':
             return 'left'
     
-        elif (nearby[1][2] == 2) and lastmove != 'left':
+        elif (nearby[1][2] == 1) and lastmove != 'left':
             return 'right'
         
     else:
@@ -125,6 +125,7 @@ def mazerun():
     width = data.get("mazeWidth")
     id = data.get("mazeID")
     logging.info("data sent for evaluation {}".format(input_value))
+    recorder(id,width,input_value)
     result = dict()
 
     result["playerAction"] = walker(numpath(input_value),input_value,lastmove)
