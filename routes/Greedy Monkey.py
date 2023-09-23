@@ -54,7 +54,7 @@ from routes import app
 logger = logging.getLogger(__name__)
 
 
-@app.route('/railway-builder', methods=['POST'])
+@app.route('greedymonkey', methods=['POST'])
 def evaluate():
     data = request.get_json()
     w = data.get("w")
