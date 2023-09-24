@@ -68,6 +68,7 @@ def prioritisation_function(passengers, cut_off_time):
 @app.route('/airport', methods=['POST'])
 def fly():
     data = request.get_json()
+    logging.info("Received :{}".format(data))
     result = []
     for sample in data:
       result.append(execute(prioritisation_function, sample["departureTimes"], sample["cutOffTime"]))
