@@ -15,9 +15,14 @@ logger = logging.getLogger(__name__)
 # Simple passenger class
 class Passenger:
 
-  def __init__(self, departureTime):
-    self.departureTime = departureTime
-    self.numberOfRequests = 0
+  def __init__(self, departureTime,passengers):
+    for i in range(len(passengers)):
+      if passengers[i].departureTime == departureTime:
+        passengers[i].askTimetoDeparture()
+        del self
+    else:
+        self.departureTime = departureTime
+        self.numberOfRequests = 0
 
 
   def askTimeToDeparture(self):
