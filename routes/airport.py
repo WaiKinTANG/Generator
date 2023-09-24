@@ -18,7 +18,7 @@ class Passenger:
   def __init__(self, departureTime,passengers):
     for i in range(len(passengers)):
       if passengers[i].departureTime == departureTime:
-        passengers[i].askTimetoDeparture()
+        passengers[i].numberOfRequests += 1
         del self
     else:
         self.departureTime = departureTime
