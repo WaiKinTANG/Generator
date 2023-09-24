@@ -20,6 +20,7 @@ class Passenger:
       if passengers[i].departureTime == departureTime:
         passengers[i].numberOfRequests += 1
         del self
+        break
     else:
         self.departureTime = departureTime
         self.numberOfRequests = 0
