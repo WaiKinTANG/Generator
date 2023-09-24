@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 # Simple passenger class
 class Passenger:
 
-  def init(self, departureTime):
+  def __init__(self, departureTime):
     self.departureTime = departureTime
     self.numberOfRequests = 0
 
