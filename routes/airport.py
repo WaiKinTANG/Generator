@@ -71,7 +71,12 @@ def fly():
     logging.info("Received :{}".format(data))
     result = []
     for sample in data:
-      result.append(execute(prioritisation_function, sample["departureTimes"], sample["cutOffTime"]))
+      
+      dp = sample.get("departureTimes")
+      cutoff = sample.get("cutOffTime")
+      logging.info("dp time :{}".format(dp))
+      logging.info("cutoff :{}".format(cutoff))
+      result.append(execute(prioritisation_function, dp, cutoff))
     
     logging.info("My result :{}".format(result))
     return json.dumps(result)
