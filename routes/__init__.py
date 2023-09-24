@@ -9,3 +9,4 @@ import routes.digital
 import routes.railway
 import routes.chinese
 import routes.calendar
+import routes.airport
