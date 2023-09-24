@@ -39,7 +39,8 @@ def execute(prioritisation_function, passenger_data, cut_off_time):
 
   # Initialise list of passenger instances
   for i in range(len(passenger_data)):
-    passengers.append(Passenger(passenger_data[i]))
+    ls = passengers.copy()
+    passengers.append(Passenger(passenger_data[i],ls))
 
   # Apply solution and re-shuffle with departure cut-off time
   prioritised_and_filtered_passengers = prioritisation_function(passengers, cut_off_time)
